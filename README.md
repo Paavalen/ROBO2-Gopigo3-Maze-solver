@@ -136,7 +136,7 @@ To run the maze solver script on your GoPiGo3, follow these steps:
 
 The robot should now start solving the maze autonomously.
 
-### Methode 2: Launch all script on terminal
+### Methode 2: Launch all scripts manually
 
 open Four other terminals and run these commands on each.
 
