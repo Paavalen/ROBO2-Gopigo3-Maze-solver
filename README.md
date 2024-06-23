@@ -22,7 +22,7 @@ The Maze Solver for GoPiGo3 project consists of a ROS package that enables the G
 
 ### Prerequisites
 
-Before you begin, ensure you have the following software installed on your system:
+Before you begin, ensure you have the following software installed on your system (raspberry pi 4 running ubuntu 20.04):
 
 - [ROS (Robot Operating System)](http://wiki.ros.org/ROS/Installation)
 - [Python 3](https://www.python.org/downloads/)
