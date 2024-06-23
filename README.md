@@ -5,6 +5,7 @@ Welcome to the Maze Solver for GoPiGo3 repository! This project was developed by
 ## Table of Contents
 
 - [Project Overview](#project-overview)
+- [Algorithm Explanation](#algorithm-explanation)
 - [Installation](#installation)
   - [Prerequisites](#prerequisites)
   - [Setting Up the Catkin Workspace](#setting-up-the-catkin-workspace)
@@ -13,10 +14,38 @@ Welcome to the Maze Solver for GoPiGo3 repository! This project was developed by
 - [Usage](#usage)
 - [Note](#note)
 
-
 ## Project Overview
 
 The Maze Solver for GoPiGo3 project consists of a ROS package that enables the GoPiGo3 robot to navigate and solve mazes autonomously. The robot uses three ultrasound sensors to detect and follow paths within the maze, making decisions at intersections to reach the goal.
+
+## Algorithm Explanation
+
+The maze-solving algorithm uses a combination of wall-following and obstacle-avoidance techniques. Here's a brief overview of how the algorithm works:
+
+1. **Initialization**: 
+   - The robot initializes ROS nodes and subscribers for the distance sensors.
+   - It sets up publishers for robot movement commands.
+
+2. **Sensor Data Handling**:
+   - The robot reads data from three distance sensors: front, left, and right.
+
+3. **Movement Commands**:
+   - The robot publishes movement commands based on sensor readings.
+
+4. **Wall Following**:
+   - The robot follows the left wall by maintaining a desired distance using a proportional control approach. It adjusts its speed and direction to stay at the desired distance from the wall.
+
+5. **Obstacle Detection and Avoidance**:
+   - If the robot detects an obstacle in front, it stops and decides whether to turn left or right based on the distances from the left and right sensors.
+   - In case of a dead end (obstacles on all sides), the robot backtracks and re-evaluates the situation.
+
+6. **Dead-End Handling**:
+   - If the robot encounters a dead end, it moves backward for a short duration and attempts to turn to find a new path.
+
+7. **Backtracking**:
+   - The robot can backtrack a limited number of times if it repeatedly encounters dead ends.
+
+The robot continuously performs these actions in a loop, adjusting its path until it successfully navigates through the maze.
 
 ## Installation
 
@@ -105,7 +134,7 @@ To run the maze solver script on your GoPiGo3, follow these steps:
 
 The robot should now start solving the maze autonomously.
 
-If the launch file donnot works, open three other terminals and run these commands on each.
+If the launch file does not work, open three other terminals and run these commands on each.
 
 Terminal 1
 
@@ -125,9 +154,9 @@ Terminal 3
 
 ```sh
 cd ~/catkin_ws/src/driver_robot/src
-python3 robot_driverV3.py
+roslaunch driver_robot robot_driverV3.py
 ```
 
 ## Note
 
-There are other unused script in the package that we used for testing.
+There are other unused scripts in the package that we used for testing.
