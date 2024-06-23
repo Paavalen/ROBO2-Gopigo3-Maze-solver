@@ -128,6 +128,6 @@ cd ~/catkin_ws/src/driver_robot/src
 python3 robot_driverV3.py
 ```
 
-##Note
+## Note
 
 There are other unused script in the package that we used for testing.
