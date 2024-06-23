@@ -120,13 +120,7 @@ To run the maze solver script on your GoPiGo3, follow these steps:
    cd ~/catkin_ws
    ```
 
-3. Run the ROS master:
-
-   ```sh
-   roscore
-   ```
-
-4. Place the robot at the start of the maze, open a new terminal, source your workspace, and launch the maze solver:
+3. Place the robot at the start of the maze, open a new terminal, source your workspace, and launch the maze solver:
 
    ```sh
    cd ~/catkin_ws
