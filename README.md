@@ -109,6 +109,8 @@ source devel/setup.bash
 
 ## Usage
 
+### Methode 1: Launch file
+
 To run the maze solver script on your GoPiGo3, follow these steps:
 
 1. Ensure your GoPiGo3 robot is powered on and connected.
@@ -134,24 +136,32 @@ To run the maze solver script on your GoPiGo3, follow these steps:
 
 The robot should now start solving the maze autonomously.
 
-If the launch file does not work, open three other terminals and run these commands on each.
+### Methode 2: Launch all script on terminal
 
-Terminal 1
+open Four other terminals and run these commands on each.
+
+1. Run the ROS master:
+
+   ```sh
+   roscore
+   ```
+
+2. Run the gopigo driver
 
 ```sh
 cd ~/catkin_ws/src/driver_robot/src
 python3 gopigo3_driver.py
 ```
 
-Terminal 2
+3. Run Distant Sensor 
 
 ```sh
 cd ~/catkin_ws/src/driver_robot/src
 python3 distance-sensor.py
 ```
 
-Terminal 3
-
+4. Launch the script
+   
 ```sh
 cd ~/catkin_ws/src/driver_robot/src
 roslaunch driver_robot robot_driverV3.py
