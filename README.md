@@ -148,24 +148,24 @@ open Four other terminals and run these commands on each.
 
 2. Run the gopigo driver
 
-```sh
-cd ~/catkin_ws/src/driver_robot/src
-python3 gopigo3_driver.py
-```
+   ```sh
+   cd ~/catkin_ws/src/driver_robot/src
+   python3 gopigo3_driver.py
+   ```
 
 3. Run Distant Sensor 
 
-```sh
-cd ~/catkin_ws/src/driver_robot/src
-python3 distance-sensor.py
-```
+   ```sh
+   cd ~/catkin_ws/src/driver_robot/src
+   python3 distance-sensor.py
+   ```
 
 4. Launch the script
    
-```sh
-cd ~/catkin_ws/src/driver_robot/src
-roslaunch driver_robot robot_driverV3.py
-```
+   ```sh
+   cd ~/catkin_ws/src/driver_robot/src
+   roslaunch driver_robot robot_driverV3.py
+   ```
 
 ## Note
 
