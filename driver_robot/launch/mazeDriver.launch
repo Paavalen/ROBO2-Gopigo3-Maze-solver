@@ -1,0 +1,7 @@
+<launch>
+    <node pkg="driver_robot" type="distance-sensor.py" name="distance-sensor.py" output="screen">
+    <node pkg="driver_robot" type="distance-sensor_subscriber.py" name="distance-sensor_subscriber.py" output="screen">
+    <node pkg="driver_robot" type="gopigo3_driver.py" name="gopigo3_driver.py" output="screen">
+    <node pkg="driver_robot" type="robot_driverV3.py" name="robot_driverV3.py" output="screen">
+    </node>
+</launch>
